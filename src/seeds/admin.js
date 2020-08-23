@@ -9,7 +9,6 @@ const initializeAdmin = () => {
     password: process.env.ADMIN_PASSWORD,
     isAdmin: true,
   };
-
   const newUser = new User(admin);
   newUser.save();
 };
