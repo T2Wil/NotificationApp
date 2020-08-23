@@ -1,9 +1,12 @@
 import express from 'express';
-import passport from 'passport';
 import notificationsController from '../controller/Notifications';
+import rateLimiter from '../middleware/rateLimiter';
 
 const Router = express.Router();
 
-Router.get('/notifications', notificationsController.send);
+Router.get('/notifications', rateLimiter, notificationsController.send);
+
+//Admin routes
+Router.post('/notifications/renew',notificationsController.renewMonthlySubscription);
 
 export default Router;
