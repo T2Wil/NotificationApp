@@ -7,7 +7,7 @@ import passport from './config/passport';
 import initializeAdmin from './seeds/admin';
 import rateLimiter from './middlewares/rateLimiter';
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 5000;
 const app = express();
 
 mongoose

@@ -9,9 +9,8 @@ class Notifications {
     try {
       res.status(200).send({
         status: 200,
-        data: {
-          message: 'hey there',
-        },
+        title: 'important communication',
+        content: 'Urgent meeting on Friday',
       });
     } catch (error) {
       res.send({ error });
