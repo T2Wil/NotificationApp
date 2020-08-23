@@ -4,6 +4,6 @@ import notificationsController from '../controller/Notifications';
 
 const Router = express.Router();
 
-Router.post('/notifications', notificationsController.send);
+Router.get('/notifications', notificationsController.send);
 
 export default Router;
