@@ -94,8 +94,9 @@ const rateLimiter = (req, res, next) => {
  try {
    initializeConstants();
    if (!redisClient) throw new Error('Redis client not found.');
+   if (!redisClient.connected) throw new Error('Redis client not connected.');
    redisClient.get(req.ip, (error, record) => {
-     if (error) throw error;
+     if (error) throw new Error('Error getting redis log record.');
      else if (!record) {
        createRedisRecord(req.ip);
        next();
