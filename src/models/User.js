@@ -3,13 +3,12 @@ import mongoose from 'mongoose';
 const { Schema } = mongoose;
 const { ObjectId } = Schema;
 
-const UserSchema = new Schema({
+const userSchema = new Schema({
   id: ObjectId,
-  email: String,
-  password: String,
-  isAdmin: Boolean,
-  allowedRequestsPerSec: Number,
-  allowedRequestsPerMonth: Number,
+  ip: String,
+  maxRequestsPerSec: Number,
+  maxRequestsPerMonth: Number,
+  requestsMadeInMonth: Number,
 });
 
-export default mongoose.model('User', UserSchema);
+export default mongoose.model('User', userSchema);
