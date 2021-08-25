@@ -71,6 +71,8 @@ class Notifications {
       return res.send({ error });
     }
   }
-  static async upgrade(req, res) {}
+  static async upgrade(req, res) {
+    // empty for now
+  }
 }
 export default Notifications;
